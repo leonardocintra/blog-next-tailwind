@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ImFacebook, ImTwitter, ImYoutube } from "react-icons/im";
 
 export default function Header() {
@@ -14,19 +15,23 @@ export default function Header() {
           />
         </div>
         <div className="shrink w-80 sm:order-2">
-          <a href="" className="font-bold uppercase text-3xl">Design</a>
+          <Link href={"/"} className="font-bold uppercase text-3xl">
+            Design
+          </Link>
         </div>
         <div className="w-96 order-3 flex justify-center">
           <div className="flex gap-6">
-            <a href="">
+            <Link href={"/"}>
               <ImFacebook color="#888888"></ImFacebook>
-            </a>
-            <a href="">
+            </Link>
+
+            <Link href={"/"}>
               <ImTwitter color="#888888"></ImTwitter>
-            </a>
-            <a href="">
+            </Link>
+
+            <Link href={"/"}>
               <ImYoutube color="#888888"></ImYoutube>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
