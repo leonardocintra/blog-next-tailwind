@@ -2,14 +2,43 @@ import Image from "next/image";
 import Link from "next/link";
 import Imagem1 from "../public/img/img1.jpg";
 import Author from "./_child/author";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper";
+
+// Import Swiper styles
+import "swiper/css";
 
 export default function Section1() {
+  const bg = {
+    background: "url('/img/banner.png') no-repeat",
+    backgroundPosition: "right",
+  };
+
   return (
-    <section className="py-16">
+    <section className="py-16" style={bg}>
       <div className="container mx-auto md:px-20">
         <h1 className="font-bold text-4xl pb-12 text-center">Trendig</h1>
 
-        {slide()}
+        <Swiper
+          spaceBetween={30}
+          centeredSlides={true}
+          loop={true}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          pagination={{
+            clickable: true,
+          }}
+          navigation={true}
+          modules={[Autoplay]}
+          className="mySwiper"
+        >
+          <SwiperSlide>{slide()}</SwiperSlide>
+          <SwiperSlide>{slide()}</SwiperSlide>
+          <SwiperSlide>{slide()}</SwiperSlide>
+          <SwiperSlide>{slide()}</SwiperSlide>
+        </Swiper>
       </div>
     </section>
   );
@@ -41,7 +70,9 @@ function slide(): JSX.Element {
           </Link>
         </div>
         <p className="text-gray-500 py-3">
-            alguma coisa precisa ser escrito aqui. Mas saiba que as camisetas são 100% algodão. Outra dica é comprar mais de uma para facilitar o frete. Junte uns amigos e escolham as camisetas que desejam comprar
+          alguma coisa precisa ser escrito aqui. Mas saiba que as camisetas são
+          100% algodão. Outra dica é comprar mais de uma para facilitar o frete.
+          Junte uns amigos e escolham as camisetas que desejam comprar
         </p>
         <Author></Author>
       </div>

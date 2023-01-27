@@ -4,7 +4,6 @@ import Author1 from "../../public/img/author/author1.jpg";
 
 export default function Author() {
 
-
   return (
     <div className="author flex py-5">
       <Image
