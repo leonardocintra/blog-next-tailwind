@@ -3,7 +3,7 @@ import Footer from "../components/footer";
 import Header from "../components/header";
 
 interface LayoutFormatProps {
-  children: string | JSX.Element;
+  children: string | JSX.Element | JSX.Element[];
 }
 
 export default function LayoutFormat({ children }: LayoutFormatProps) {
